@@ -1,4 +1,4 @@
-class process :
+class Process :
     def __init__(self, pid, arrival_time, burst_time, priority=0):
         
         if arrival_time < 0 :
@@ -8,10 +8,7 @@ class process :
             raise ValueError("burst_time must be positive (greater than 0).")
         
         if not pid :
-            print("Process id cannot be empty.")
-            
-        if pid == "" :
-            print("Inavalid Process id.")
+            raise ValueError("Process id cannot be empty.")
             
         self.pid = pid
         self.arrival_time = arrival_time
